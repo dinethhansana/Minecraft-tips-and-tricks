@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minecraft Tips</title>
+<style>
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        background-color: #7ebc59;
+        color: #333;
+        padding: 50px;
+        transition: background 0.5s ease; /* Smooth transition for gradients */
+    }
+    h1 {
+        color: #fff;
+        background-color: #2a5d2f;
+        padding: 10px;
+        border: 3px solid #000;
+        border-radius: 5px;
+        display: inline-block;
+    }
+    button {
+        padding: 10px 20px;
+        margin-top: 20px;
+        border: none;
+        background-color: #3e8e41;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+    button:hover {
+        background-color: #2a5d2f;
+    }
+    #tip {
+        margin-top: 20px;
+        font-size: 20px;
+        color: #fff;
+        background-color: #2a5d2f;
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid #000;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+</head>
+<body>
+
+<h1>Minecraft Tips & Tricks</h1>
+<div id="content">
+    <button onclick="showTip()">Get a Random Tip</button>
+    <button onclick="changeGradient()">Change Background Gradient</button>
+    <p id="tip"></p>
+</div>
+
+<script>
+    const tips = [
+        "Always carry a water bucket to survive falls and lava!",
+        "Create a shield to block attacks from skeletons.",
+        "Build a simple crop farm early for a steady food supply.",
+        "Craft torches to prevent mobs from spawning in your base.",
+        "Use beds to quickly set your spawn point during exploration.",
+        "Enchant gear with Unbreaking to make it last longer.",
+        "Mine at Y-level -58 for the best diamond chances.",
+        "Use campfires to cook food without wasting coal.",
+        "Bring a compass when exploring to find your way back home.",
+        "Create a nether portal for faster travel between distant areas."
+    ];
+
+    const gradients = [
+        "linear-gradient(120deg, #89f7fe, #66a6ff)",
+        "linear-gradient(120deg, #f093fb, #f5576c)",
+        "linear-gradient(120deg, #43e97b, #38f9d7)",
+        "linear-gradient(120deg, #fa709a, #fee140)",
+        "linear-gradient(120deg, #30cfd0, #330867)",
+        "linear-gradient(120deg, #a1c4fd, #c2e9fb)",
+        "linear-gradient(120deg, #fbc2eb, #a6c1ee)"
+    ];
+
+    let currentGradient = 0;
+
+    function showTip() {
+        const randomIndex = Math.floor(Math.random() * tips.length);
+        const tipElement = document.getElementById("tip");
+        tipElement.textContent = tips[randomIndex];
+    }
+
+    function changeGradient() {
+        currentGradient = (currentGradient + 1) % gradients.length;
+        document.body.style.background = gradients[currentGradient];
+    }
+</script>
+
+</body>
+</html>
